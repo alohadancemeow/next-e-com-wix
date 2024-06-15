@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import CartModal from "./CartModal";
 // import CartModal from "./CartModal";
 // import { useWixClient } from "@/hooks/useWixClient";
 // import Cookies from "js-cookie";
@@ -94,7 +95,7 @@ const NavIcons = () => {
           10
         </div>
       </div>
-      {/* {isCartOpen && <CartModal />} */}
+      {isCartOpen && <CartModal />}
     </div>
   );
 };
