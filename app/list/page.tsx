@@ -2,16 +2,16 @@
 import Filter from "@/components/Filter";
 import ProductList from "@/components/ProductList";
 import Skeleton from "@/components/Skeletion";
-// import { wixClientServer } from "@/lib/wixClientServer";
+import { wixClientServer } from "@/lib/wixClientServer";
 import Image from "next/image";
 import { Suspense } from "react";
 
 const ListPage = async ({ searchParams }: { searchParams: any }) => {
-  //   const wixClient = await wixClientServer();
+  const wixClient = await wixClientServer();
 
-  //   const cat = await wixClient.collections.getCollectionBySlug(
-  //     searchParams.cat || "all-products"
-  //   );
+  const cat = await wixClient.collections.getCollectionBySlug(
+    searchParams.cat || "all-products"
+  );
 
   return (
     <div className="px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64 relative">
@@ -32,7 +32,7 @@ const ListPage = async ({ searchParams }: { searchParams: any }) => {
       </div>
       {/* FILTER */}
       <Filter />
-      {/* <h1 className="mt-12 text-xl font-semibold">
+      <h1 className="mt-12 text-xl font-semibold">
         {cat?.collection?.name} For You!
       </h1>
       <Suspense fallback={<Skeleton />}>
@@ -42,7 +42,7 @@ const ListPage = async ({ searchParams }: { searchParams: any }) => {
           }
           searchParams={searchParams}
         />
-      </Suspense> */}
+      </Suspense>
     </div>
   );
 };

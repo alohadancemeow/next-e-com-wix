@@ -1,5 +1,11 @@
-import { BadgeCent } from "lucide-react";
-import Image from "next/image";
+import {
+  BadgeCent,
+  Facebook,
+  Instagram,
+  Linkedin,
+  Twitter,
+  Youtube,
+} from "lucide-react";
 import Link from "next/link";
 
 const Footer = () => {
@@ -19,11 +25,11 @@ const Footer = () => {
           <span className="font-semibold">hello@lama.dev</span>
           <span className="font-semibold">+1 234 567 890</span>
           <div className="flex gap-6">
-            <Image src="/facebook.png" alt="" width={16} height={16} />
-            <Image src="/instagram.png" alt="" width={16} height={16} />
-            <Image src="/youtube.png" alt="" width={16} height={16} />
-            <Image src="/pinterest.png" alt="" width={16} height={16} />
-            <Image src="/x.png" alt="" width={16} height={16} />
+            <Facebook size={16} />
+            <Instagram size={16} />
+            <Youtube size={16} />
+            <Twitter size={16} />
+            <Linkedin size={16} />
           </div>
         </div>
         {/* CENTER */}
