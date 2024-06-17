@@ -11,6 +11,7 @@
   "dependencies": {
     "@wix/bookings": "^1.0.392",
     "@wix/ecom": "^1.0.597",
+    "@wix/members": "^1.0.86",
     "@wix/sdk": "^1.10.0",
     "@wix/stores": "^1.0.155",
     "isomorphic-dompurify": "^2.12.0",
@@ -18,7 +19,9 @@
     "lucide-react": "^0.395.0",
     "next": "14.2.4",
     "react": "^18",
+    "react-confetti": "^6.1.0",
     "react-dom": "^18",
+    "timeago.js": "^4.0.2",
     "zustand": "^4.5.2"
   },
   "devDependencies": {

@@ -7,11 +7,10 @@ import { useWixClient } from "@/hooks/useWixClient";
 import { currentCart } from "@wix/ecom";
 
 const CartModal = () => {
-  // TEMPORARY
-  // const cartItems = true;
-
   const wixClient = useWixClient();
   const { cart, isLoading, removeItem } = useCartStore();
+
+  // console.log(cart, "cart");
 
   const handleCheckout = async () => {
     try {
@@ -44,9 +43,7 @@ const CartModal = () => {
       ) : (
         <>
           <h2 className="text-xl">Shopping Cart</h2>
-          {/* LIST */}
           <div className="flex flex-col gap-8">
-            {/* ITEM */}
             {cart.lineItems.map((item) => (
               <div className="flex gap-4" key={item._id}>
                 {item.image && (
@@ -64,9 +61,7 @@ const CartModal = () => {
                   />
                 )}
                 <div className="flex flex-col justify-between w-full">
-                  {/* TOP */}
                   <div className="">
-                    {/* TITLE */}
                     <div className="flex items-center justify-between gap-8">
                       <h3 className="font-semibold">
                         {item.productName?.original}
@@ -80,12 +75,10 @@ const CartModal = () => {
                         ${item.price?.amount}
                       </div>
                     </div>
-                    {/* DESC */}
                     <div className="text-sm text-gray-500">
                       {item.availability?.status}
                     </div>
                   </div>
-                  {/* BOTTOM */}
                   <div className="flex justify-between text-sm">
                     <span className="text-gray-500">Qty. {item.quantity}</span>
                     <span
@@ -100,11 +93,11 @@ const CartModal = () => {
               </div>
             ))}
           </div>
-          {/* BOTTOM */}
           <div className="">
             <div className="flex items-center justify-between font-semibold">
               <span className="">Subtotal</span>
-              {/* <span className="">${cart.subtotal.amount}</span> */}
+              {/* @ts-ignore */}
+              <span className="">${cart.subtotal.amount}</span>
             </div>
             <p className="text-gray-500 text-sm mt-2 mb-4">
               Shipping and taxes calculated at checkout.
