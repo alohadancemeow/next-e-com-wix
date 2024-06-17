@@ -1,9 +1,10 @@
 import { wixClientServer } from "@/lib/wixClientServer";
 import { products } from "@wix/stores";
+
 import Image from "next/image";
 import Link from "next/link";
 import DOMPurify from "isomorphic-dompurify";
-// import Pagination from "./Pagination";
+import Pagination from "./Pagination";
 
 const PRODUCT_PER_PAGE = 8;
 
@@ -34,8 +35,10 @@ const ProductList = async ({
         ? parseInt(searchParams.page) * (limit || PRODUCT_PER_PAGE)
         : 0
     );
-  // .find();
 
+  /* This part of the code snippet is checking if there is a `sort` parameter present in the
+  `searchParams` object. If the `sort` parameter exists, it splits the value of `sort` into two
+  parts: `sortType` and `sortBy` based on the space character. */
   if (searchParams?.sort) {
     const [sortType, sortBy] = searchParams.sort.split(" ");
 
@@ -47,6 +50,7 @@ const ProductList = async ({
     }
   }
 
+  // invoke query
   const res = await productQuery.find();
 
   return (
@@ -96,13 +100,13 @@ const ProductList = async ({
           </button>
         </Link>
       ))}
-      {/* {searchParams?.cat || searchParams?.name ? (
+      {searchParams?.cat || searchParams?.name ? (
         <Pagination
           currentPage={res.currentPage || 0}
           hasPrev={res.hasPrev()}
           hasNext={res.hasNext()}
         />
-      ) : null} */}
+      ) : null}
     </div>
   );
 };

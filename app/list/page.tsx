@@ -1,10 +1,10 @@
-// import Filter from "@/components/Filter";
+import Image from "next/image";
+import { Suspense } from "react";
+import { wixClientServer } from "@/lib/wixClientServer";
+
 import Filter from "@/components/Filter";
 import ProductList from "@/components/ProductList";
 import Skeleton from "@/components/Skeletion";
-import { wixClientServer } from "@/lib/wixClientServer";
-import Image from "next/image";
-import { Suspense } from "react";
 
 const ListPage = async ({ searchParams }: { searchParams: any }) => {
   const wixClient = await wixClientServer();

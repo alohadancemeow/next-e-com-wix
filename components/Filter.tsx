@@ -7,6 +7,13 @@ const Filter = () => {
   const searchParams = useSearchParams();
   const { replace } = useRouter();
 
+  /**
+   * The function `handleFilterChange` updates the URL query parameters based on the changes in the
+   * select or input elements.
+   * @param e - The parameter `e` is an event object of type `React.ChangeEvent` that can be either an
+   * `HTMLSelectElement` or an `HTMLInputElement`. It is typically used to handle changes in input
+   * fields or select elements in a React component.
+   */
   const handleFilterChange = (
     e: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>
   ) => {
@@ -69,8 +76,8 @@ const Filter = () => {
           onChange={handleFilterChange}
         >
           <option>Sort By</option>
-          <option value="asc price">Price (low to high)</option>
-          <option value="desc price">Price (high to low)</option>
+          <option value="asc price">{`Price (low to high)`}</option>
+          <option value="desc price">{`Price (high to low)`}</option>
           <option value="asc lastUpdated">Newest</option>
           <option value="desc lastUpdated">Oldest</option>
         </select>
