@@ -1,7 +1,6 @@
 "use client";
 
-import { BellRing, ShoppingBag, ShoppingCart } from "lucide-react";
-import Image from "next/image";
+import { BellRing, CircleUser, ShoppingCart } from "lucide-react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -21,8 +20,7 @@ const NavIcons = () => {
   const wixClient = useWixClient();
   const isLoggedIn = wixClient.auth.loggedIn();
 
-  // TEMPORARY
-  // const isLoggedIn = false;
+  const { cart, counter, getCart } = useCartStore();
 
   const handleProfile = () => {
     if (!isLoggedIn) {
@@ -33,9 +31,10 @@ const NavIcons = () => {
   };
 
   // AUTH WITH WIX-MANAGED AUTH
-
-  // const wixClient = useWixClient();
-
+  /**
+   * The `login` function initiates an OAuth login flow by generating authentication data, storing it
+   * in local storage, and redirecting the user to the authentication URL.
+   */
   // const login = async () => {
   //   const loginRequestData = wixClient.auth.generateOAuthData(
   //     "http://localhost:3000"
@@ -48,6 +47,10 @@ const NavIcons = () => {
   //   window.location.href = authUrl;
   // };
 
+  /**
+   * The `handleLogout` function logs the user out by removing the refresh token, calling the Wix
+   * client's logout method, and redirecting to the logout URL.
+   */
   const handleLogout = async () => {
     setIsLoading(true);
     Cookies.remove("refreshToken");
@@ -57,17 +60,16 @@ const NavIcons = () => {
     router.push(logoutUrl);
   };
 
-  const { cart, counter, getCart } = useCartStore();
-
   useEffect(() => {
     getCart(wixClient);
   }, [wixClient, getCart]);
 
   return (
     <div className="flex items-center gap-4 xl:gap-6 relative">
-      <ShoppingBag
+      <CircleUser
         size={22}
         className="cursor-pointer"
+        // onClick={login}
         onClick={handleProfile}
       />
       {isProfileOpen && (
@@ -80,6 +82,7 @@ const NavIcons = () => {
       )}
 
       <BellRing size={22} className="cursor-pointer" />
+
       <div
         className="relative cursor-pointer"
         onClick={() => setIsCartOpen((prev) => !prev)}
