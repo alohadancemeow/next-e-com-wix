@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js E-commerce with Wix Studio
 
-## Getting Started
+This repository showcases a basic functional e-commerce application built using the latest versions of Next.js, TypeScript, and Wix CMS.
+For learning CMS.
 
-First, run the development server:
+**🎉 Key Features:**
+
+- **Tech Stack:** Next.js (latest), TypeScript + Wix
+- **Inspiration:** [Link to original repository](https://github.com/safak/next-ecommerce/tree/starter) (adapted for this implementation) 🙏
+- **Wix Studio:** [Wix studio](https://www.wix.com/studio)
+- **Purpose:** For learning CMS
+
+**👋 Getting Started:**
+
+1. Clone this repository.
+2. Install dependencies (`npm install` or `yarn install`).
+3. Set up the appropriate environment variables in the `.env` file (database credentials, API keys, etc.).
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+NEXT_PUBLIC_WIX_CLIENT_ID=
+FEATURED_PRODUCTS_FEATURED_CATEGORY_ID=
+FEATURED_PRODUCTS_NEW_CATEGORY_ID=
+NEXT_PUBLIC_WIX_APP_ID=
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**🚀 Deploy on Netlify**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Create a file called `netlify.toml` in the root of your project. Copy and paste the code snippet below into the netlify.toml file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```bash
+[build]
+  command = "npm run build"
+  publish = ".next"
 
-## Learn More
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+```
 
-To learn more about Next.js, take a look at the following resources:
+Install the Netlify dependency package
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm i @netlify/plugin-nextjs
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+**🖼️ Screenshot:**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+![Image of shoe store home page](public/Screenshot.png)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+**👋 Contributions Welcome!**
+
+Encouraging constructive feedback and pull requests to enhance this project.
+
+**⚠️ Disclaimer:**
+
+This repository is currently under development. I will continuously improve and document it. Stay tuned for updates!
+
+
+**🎉 Live site:** https://next-e-com-wix.netlify.app

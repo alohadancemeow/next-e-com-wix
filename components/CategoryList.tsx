@@ -7,12 +7,12 @@ const CategoryList = async () => {
   const cats = await wixClient.collections.queryCollections().find();
 
   return (
-    <div className="px-4 overflow-x-scroll scrollbar-hide">
-      <div className="flex gap-4 md:gap-8 justify-center items-center flex-wrap">
+    <div className="px-4 scrollbar-hide">
+      <div className="grid grid-rows-1 gap-4 md:grid-cols-5">
         {cats.items.map((item) => (
           <Link
             href={`/list?cat=${item.slug}`}
-            className="flex-shrink-0 w-full sm:w-1/2 lg:w-1/4 xl:w-1/6"
+            // className="flex-shrink-0 w-full sm:w-1/2 lg:w-1/4 xl:w-1/6"
             key={item._id}
           >
             <div className="relative bg-slate-100 w-full h-96">
