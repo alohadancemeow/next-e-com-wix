@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@netlify/plugin-nextjs": "^5.5.0",
     "@wix/bookings": "^1.0.392",
     "@wix/ecom": "^1.0.597",
     "@wix/members": "^1.0.86",
