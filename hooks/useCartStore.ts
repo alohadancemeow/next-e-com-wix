@@ -3,7 +3,7 @@ import { currentCart } from "@wix/ecom";
 import { WixClient } from "@/context/wixContext";
 
 type CartState = {
-  cart: currentCart.Cart;
+  cart: currentCart.Cart | null;
   isLoading: boolean;
   counter: number;
   getCart: (wixClient: WixClient) => void;
@@ -14,6 +14,7 @@ type CartState = {
     quantity: number
   ) => void;
   removeItem: (wixClient: WixClient, itemId: string) => void;
+  clearCart: (wixClient: WixClient) => void;
 };
 
 export const useCartStore = create<CartState>((set) => ({
@@ -64,5 +65,21 @@ export const useCartStore = create<CartState>((set) => ({
       counter: response.cart?.lineItems.length,
       isLoading: false,
     });
+  },
+  clearCart: async (wixClient) => {
+    try {
+      set({ isLoading: true });
+
+      await wixClient.currentCart.deleteCurrentCart();
+
+      set({
+        cart: null,
+        isLoading: false,
+        counter: 0,
+      });
+    } catch (error) {
+      console.error("Failed to clear cart:", error);
+      set({ isLoading: false });
+    }
   },
 }));

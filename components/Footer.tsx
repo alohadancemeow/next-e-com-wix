@@ -1,11 +1,4 @@
-import {
-  BadgeCent,
-  Facebook,
-  Instagram,
-  Linkedin,
-  Twitter,
-  Youtube,
-} from "lucide-react";
+import { BadgeCent, Facebook, Instagram, Twitter, Youtube } from "lucide-react";
 import Link from "next/link";
 
 const Footer = () => {
@@ -16,27 +9,26 @@ const Footer = () => {
         {/* LEFT */}
         <div className="w-full md:w-1/2 lg:w-1/4 flex flex-col gap-8">
           <Link href="/">
-            <div className="text-2xl tracking-wide">LAMA</div>
+            <div className="text-2xl tracking-wide">Demo shop</div>
           </Link>
           <p>
             3252 Winding Way, Central Plaza, Willowbrook, CA 90210, United
             States
           </p>
-          <span className="font-semibold">hello@lama.dev</span>
+          <span className="font-semibold">hello@demo.dev</span>
           <span className="font-semibold">+1 234 567 890</span>
           <div className="flex gap-6">
             <Facebook size={16} />
             <Instagram size={16} />
             <Youtube size={16} />
             <Twitter size={16} />
-            <Linkedin size={16} />
           </div>
         </div>
         {/* CENTER */}
         <div className="hidden lg:flex justify-between w-1/2">
-          <div className="flex flex-col justify-between">
+          <div className="flex flex-col gap-8">
             <h1 className="font-medium text-lg">COMPANY</h1>
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-3">
               <Link href="">About Us</Link>
               <Link href="">Careers</Link>
               <Link href="">Affiliates</Link>
@@ -44,9 +36,9 @@ const Footer = () => {
               <Link href="">Contact Us</Link>
             </div>
           </div>
-          <div className="flex flex-col justify-between">
+          <div className="flex flex-col gap-8">
             <h1 className="font-medium text-lg">SHOP</h1>
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-3">
               <Link href="">New Arrivals</Link>
               <Link href="">Accessories</Link>
               <Link href="">Men</Link>
@@ -54,9 +46,9 @@ const Footer = () => {
               <Link href="">All Products</Link>
             </div>
           </div>
-          <div className="flex flex-col justify-between">
+          <div className="flex flex-col gap-8">
             <h1 className="font-medium text-lg">HELP</h1>
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-3">
               <Link href="">Customer Service</Link>
               <Link href="">My Account</Link>
               <Link href="">Find a Store</Link>
@@ -92,7 +84,7 @@ const Footer = () => {
       </div>
       {/* BOTTOM */}
       <div className="flex flex-col md:flex-row items-center justify-between gap-8 mt-16">
-        <div className="">© 2024 Lama Shop</div>
+        <div className="">© 2024 Demo Shop</div>
         <div className="flex flex-col gap-8 md:flex-row">
           <div className="">
             <span className="text-gray-500 mr-4">Language</span>
