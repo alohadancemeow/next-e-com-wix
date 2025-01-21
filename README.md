@@ -1,16 +1,18 @@
 # Next.js E-commerce with Wix Studio
 
+![Image of shoe store home page](public/Screenshot.png)
+
 This repository showcases a basic functional e-commerce application built using the latest versions of Next.js, TypeScript, and Wix CMS.
 For learning CMS.
 
-**🎉 Key Features:**
+## **🎉 Key Features:**
 
 - **Tech Stack:** Next.js (latest), TypeScript + Wix
 - **Inspiration:** [Link to original repository](https://github.com/safak/next-ecommerce/tree/starter) (adapted for this implementation) 🙏
 - **Wix Studio:** [Wix studio](https://www.wix.com/studio)
 - **Purpose:** For learning CMS
 
-**👋 Getting Started:**
+## **👋 Getting Started:**
 
 1. Clone this repository.
 2. Install dependencies (`npm install` or `yarn install`).
@@ -23,7 +25,7 @@ FEATURED_PRODUCTS_NEW_CATEGORY_ID=
 NEXT_PUBLIC_WIX_APP_ID=
 ```
 
-**🚀 Deploy on Netlify**
+## **🚀 Deploy on Netlify**
 
 Create a file called `netlify.toml` in the root of your project. Copy and paste the code snippet below into the netlify.toml file.
 
@@ -42,10 +44,6 @@ Install the Netlify dependency package
 npm i @netlify/plugin-nextjs
 ```
 
-
-**🖼️ Screenshot:**
-
-![Image of shoe store home page](public/Screenshot.png)
 
 **👋 Contributions Welcome!**
 
